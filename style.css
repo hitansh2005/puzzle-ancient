@@ -1,0 +1,69 @@
+body {
+  font-family: 'Baloo 2', cursive;
+  background: linear-gradient(135deg, #f5f7fa, #e6ebf2);
+  text-align: center;
+  margin: 0;
+  padding: 10px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 10px;
+}
+
+.logo {
+  width: 120px;
+  height: auto;
+}
+
+.title-section { text-align: center; }
+.title { font-size: 2.4em; color: #ff7043; margin: 0; }
+.theme { font-size: 1.2em; color: #444; margin-top: 5px; }
+
+.controls {
+  margin-bottom: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  align-items: center;
+}
+
+button {
+  padding: 12px 18px;
+  font-size: 1.1em;
+  background-color: #4cafef;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+}
+button:hover { background-color: #2196f3; transform: translateY(-2px); }
+#timer { font-size: 1.2em; margin-left: 10px; }
+
+.puzzle-wrapper { display: flex; justify-content: center; flex-wrap: wrap; gap: 25px; margin-top: 20px; }
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(8, 90px);
+  grid-template-rows: repeat(6, 90px);
+  gap: 2px;
+  background: #fff;
+  padding: 10px;
+  border: 3px solid #ffcc80;
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+}
+
+.piece { width: 100%; aspect-ratio: 1; perspective: 600px; transition: transform 0.2s ease-in-out; }
+.piece-inner { width: 100%; height: 100%; transition: transform 0.6s; transform-style: preserve-3d; position: relative; }
+.piece.flipped .piece-inner { transform: rotateY(180deg); }
+.front, .back { position: absolute; width: 100%; height: 100%; background-size: cover; background-position: center; backface-visibility: hidden; border: 1px solid #ccc; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+.back { transform: rotateY(180deg) scaleX(-1); }
+.draw-pile { display: flex; flex-direction: column; align-items: center; gap: 8px; max-height: calc(100vh - 220px); overflow-y: auto; padding-right: 5px; width: 110px; }
+.draw-pile .piece { width: 90px; height: 90px; flex-shrink: 0; cursor: grab; }
+.paused { pointer-events: none; opacity: 0.6; }
