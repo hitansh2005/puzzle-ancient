@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Codi 48 Piece Mix & Match Puzzle</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header class="header">
+    <img src="Logo PNG without BG.png" alt="Codi Logo" class="logo">
+    <div class="title-section">
+      <h1 class="title">Codi 48 Piece Mix & Match Puzzle</h1>
+      <p class="theme">Theme: Beach & Desert</p>
+    </div>
+  </header>
+
+  <div class="controls">
+    <button onclick="resetPuzzle()">Reset Puzzle</button>
+    <button onclick="drawNextPiece()">Draw Piece</button>
+    <button onclick="flipPuzzle()">Flip All</button>
+    <button onclick="solvePuzzle()">Solve Puzzle</button>
+    <button id="pause-btn" onclick="togglePause()">Pause</button>
+    <div id="timer">Time: 0s</div>
+  </div>
+
+  <div class="puzzle-wrapper">
+    <div id="draw-pile" class="draw-pile"></div>
+    <div class="board-container">
+      <div id="puzzle-board" class="board"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
